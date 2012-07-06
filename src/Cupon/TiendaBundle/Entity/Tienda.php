@@ -211,4 +211,9 @@ class Tienda
         return $this->ciudad;
     }
 
+    public function __toString()
+    {
+        return $this->getNombre();
+    }
+
 }
