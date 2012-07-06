@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  **/
 class Ciudad
 {
+
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
