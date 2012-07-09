@@ -1,0 +1,22 @@
+Ciudad:
+  type: entity
+  table: ciudad
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    nombre:
+      type: string
+      length: 100
+      fixed: false
+      nullable: false
+    slug:
+      type: string
+      length: 100
+      fixed: false
+      nullable: false
+  lifecycleCallbacks: {  }

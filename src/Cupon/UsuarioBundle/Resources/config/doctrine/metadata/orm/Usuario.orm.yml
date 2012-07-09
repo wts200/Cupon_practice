@@ -1,0 +1,81 @@
+Usuario:
+  type: entity
+  table: usuario
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    nombre:
+      type: string
+      length: 100
+      fixed: false
+      nullable: false
+    apellidos:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    email:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    password:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    salt:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    direccion:
+      type: text
+      nullable: true
+    permiteEmail:
+      type: boolean
+      nullable: false
+      column: permite_email
+    fechaAlta:
+      type: datetime
+      nullable: false
+      column: fecha_alta
+    fechaNacimiento:
+      type: datetime
+      nullable: false
+      column: fecha_nacimiento
+    dni:
+      type: string
+      length: 9
+      fixed: false
+      nullable: false
+    numeroTarjeta:
+      type: string
+      length: 20
+      fixed: false
+      nullable: false
+      column: numero_tarjeta
+  manyToMany:
+    oferta:
+      targetEntity: Oferta
+      cascade: {  }
+      mappedBy: usuario
+      inversedBy: null
+      joinTable: null
+      orderBy: null
+  manyToOne:
+    ciudad:
+      targetEntity: Ciudad
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        ciudad_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

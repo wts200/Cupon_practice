@@ -1,0 +1,94 @@
+Oferta:
+  type: entity
+  table: oferta
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    nombre:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    slug:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    descripcion:
+      type: text
+      nullable: false
+    condiciones:
+      type: text
+      nullable: false
+    foto:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    precio:
+      type: decimal
+      nullable: false
+    descuento:
+      type: decimal
+      nullable: false
+    fechaPublicacion:
+      type: datetime
+      nullable: true
+      column: fecha_publicacion
+    fechaExpiracion:
+      type: datetime
+      nullable: true
+      column: fecha_expiracion
+    compras:
+      type: integer
+      unsigned: false
+      nullable: false
+    umbral:
+      type: integer
+      unsigned: false
+      nullable: false
+    revisada:
+      type: boolean
+      nullable: false
+  manyToMany:
+    usuario:
+      targetEntity: Usuario
+      cascade: {  }
+      mappedBy: null
+      inversedBy: oferta
+      joinTable:
+        name: venta
+        joinColumns:
+          -
+            name: oferta_id
+            referencedColumnName: id
+        inverseJoinColumns:
+          -
+            name: usuario_id
+            referencedColumnName: id
+      orderBy: null
+  manyToOne:
+    tienda:
+      targetEntity: Tienda
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        tienda_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    ciudad:
+      targetEntity: Ciudad
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        ciudad_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }
