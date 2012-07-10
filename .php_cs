@@ -1,8 +1,8 @@
 <?php
 
-use vendor\CS\FixerInterface;
+use Symfony\CS\FixerInterface;
 
-$finder = vendor\CS\Finder\DefaultFinder::create()
+$finder = Symfony\CS\Finder\DefaultFinder::create()
     ->notName('LICENSE')
     ->notName('README.md')
     ->notName('.php_cs')
@@ -15,6 +15,6 @@ $finder = vendor\CS\Finder\DefaultFinder::create()
     ->in(__DIR__)
 ;
 
-return vendor\CS\Config\Config::create()
+return Symfony\CS\Config\Config::create()
     ->finder($finder)
 ;
