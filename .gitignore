@@ -7,10 +7,10 @@
 /web/css/*
 /web/js/*
 /nbproject
-*php-cs-fixer.phar
-*.gitignore
+/php-cs-fixer.phar
+/.gitignore
 *.tmp
 *.log*
 *.DS_Store
 /.ssh/
-.php_cs
+/.php_cs
