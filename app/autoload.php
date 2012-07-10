@@ -3,6 +3,11 @@
 use Symfony\Component\ClassLoader\UniversalClassLoader;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 
+//Se añadio de forma manual php-cs-fixer --> ", __DIR__.'/../vendor/CS_FIXER'" 
+//en el namespace Symfony, con la finalidad de poder ejecutar el archivo .php_cs 
+//el cual excluye archivos y directorios del alcance del php-cs-fixer.phar
+//(https://github.com/fabpot/PHP-CS-Fixer/blob/master/.php_cs)
+
 $loader = new UniversalClassLoader();
 $loader->registerNamespaces(array(
     'Symfony'          => array(__DIR__.'/../vendor/symfony/src', __DIR__.'/../vendor/bundles', __DIR__.'/../vendor/CS_FIXER'),
